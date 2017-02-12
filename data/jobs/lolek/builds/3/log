@@ -1,0 +1,17 @@
+Started by user [8mha:////4B19DQygU7belKPsM8y5UZw+sfIRHaPb2s6MvIIHkQHlAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+Building in workspace /var/jenkins_home/workspace/lolek
+[WS-CLEANUP] Deleting project workspace...
+Cloning the remote Git repository
+Cloning repository https://github.com/OlegK57/lolek.git
+ > git init /var/jenkins_home/workspace/lolek # timeout=10
+Fetching upstream changes from https://github.com/OlegK57/lolek.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/OlegK57/lolek.git +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url https://github.com/OlegK57/lolek.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/OlegK57/lolek.git # timeout=10
+Fetching upstream changes from https://github.com/OlegK57/lolek.git
+ > git fetch --tags --progress https://github.com/OlegK57/lolek.git +refs/heads/*:refs/remotes/origin/*
+Build was aborted
+Aborted by [8mha:////4DMD7K1EOWvTl/JfVY1cI+e7ad9d72q2mgIQTyeMOPnlAAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL90rzsvPzyPAATbMabwgAAAA==[0munknown
+Finished: ABORTED
