@@ -1,8 +1,4 @@
-Started on Feb 13, 2017 1:10:00 AM
-Using strategy: Default
-[poll] Last Built Revision: Revision d62834818cbb460fe0f2af8bec8e18bfe51275c1 (refs/remotes/origin/master)
- > git ls-remote -h https://github.com/OlegK57/lolek.git # timeout=10
-Found 1 remote heads on https://github.com/OlegK57/lolek.git
-[poll] Latest remote head revision on refs/heads/master is: d62834818cbb460fe0f2af8bec8e18bfe51275c1 - already built by 5
-Done. Took 0.83 sec
+Started on Feb 13, 2017 12:20:00 PM
+Build disabled
+Done. Took 0 ms
 No changes

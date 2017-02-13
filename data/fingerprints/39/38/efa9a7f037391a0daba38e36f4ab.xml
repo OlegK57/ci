@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fingerprint>
+  <timestamp>2017-02-13 10:51:58.239 UTC</timestamp>
+  <original>
+    <name>lolek</name>
+    <number>6</number>
+  </original>
+  <md5sum>3938efa9a7f037391a0daba38e36f4ab</md5sum>
+  <fileName>Docker image sha256:3938efa9a7f037391a0daba38e36f4abf758d5620e24b296bc7baa517e60e54c</fileName>
+  <usages/>
+  <facets>
+    <org.jenkinsci.plugins.docker.commons.fingerprint.DockerDescendantFingerprintFacet plugin="docker-commons@1.6">
+      <timestamp>1486983118235</timestamp>
+      <imageId>sha256:3938efa9a7f037391a0daba38e36f4abf758d5620e24b296bc7baa517e60e54c</imageId>
+      <usages>
+        <entry>
+          <string>bolek</string>
+          <ranges>4</ranges>
+        </entry>
+        <entry>
+          <string>lolek</string>
+          <ranges>6-10</ranges>
+        </entry>
+      </usages>
+      <descendantImageIds class="sorted-set">
+        <string>sha256:189f17585691e1aefd9c50296a8a026f9d8419d956df88958c01be4b940ced97</string>
+        <string>sha256:4a1c1e2978cd6f3d05b6123a88ac416c5dd739ae45192245dc4750c341638e93</string>
+        <string>sha256:60bd7002a21fd3a353dd769747ba2fe1453781e44aedc701a8aa959c8be558ce</string>
+        <string>sha256:789bcc58a16f13953d89411344c1fbec0b88d9fb51e51915fde16687ca6854d3</string>
+        <string>sha256:899e8901879d249e81dfeabcaa58739912836a5648911c2e213b9f3d0c2e413a</string>
+        <string>sha256:c778bfea3b19cdedf67c98a90d060ed472b46b9993ebd71e7082f0f030c3fbec</string>
+      </descendantImageIds>
+    </org.jenkinsci.plugins.docker.commons.fingerprint.DockerDescendantFingerprintFacet>
+  </facets>
+</fingerprint>

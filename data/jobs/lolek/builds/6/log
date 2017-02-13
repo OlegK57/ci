@@ -1,0 +1,125 @@
+Started by user [8mha:////4LZhWKkG598r9SJGD40R/skvjjRbj2Blghzoz8aN6IcvAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+[EnvInject] - Loading node environment variables.
+Building in workspace /var/jenkins_home/workspace/lolek
+[WS-CLEANUP] Deleting project workspace...
+Cloning the remote Git repository
+Cloning repository https://github.com/OlegK57/lolek.git
+ > git init /var/jenkins_home/workspace/lolek # timeout=10
+Fetching upstream changes from https://github.com/OlegK57/lolek.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/OlegK57/lolek.git +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url https://github.com/OlegK57/lolek.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/OlegK57/lolek.git # timeout=10
+Fetching upstream changes from https://github.com/OlegK57/lolek.git
+ > git fetch --tags --progress https://github.com/OlegK57/lolek.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision d62834818cbb460fe0f2af8bec8e18bfe51275c1 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f d62834818cbb460fe0f2af8bec8e18bfe51275c1
+ > git rev-list d62834818cbb460fe0f2af8bec8e18bfe51275c1 # timeout=10
+[lolek] $ /bin/sh -xe /tmp/hudson4368008843821167825.sh
++ date +%Y-%m-%d_%H%M%S
++ STAMP_TD=2017-02-13_105140
++ FULL_STAMP=6-2017-02-13_105140
++ echo FULL_STAMP=6-2017-02-13_105140
++ echo 6-2017-02-13_105140
+[EnvInject] - Injecting environment variables from a build step.
+[EnvInject] - Injecting as environment variables the properties file path 'env.properties'
+[EnvInject] - Variables injected successfully.
+[lolek] $ docker build -t olegk57/lolek:6-2017-02-13_105140 --pull=true /var/jenkins_home/workspace/lolek
+Sending build context to Docker daemon 57.86 kB
+Step 1/4 : FROM nginx
+latest: Pulling from library/nginx
+5040bd298390: Already exists
+333547110842: Pulling fs layer
+4df1e44d2a7a: Pulling fs layer
+4df1e44d2a7a: Download complete
+333547110842: Verifying Checksum
+333547110842: Download complete
+333547110842: Pull complete
+4df1e44d2a7a: Pull complete
+Digest: sha256:f2d384a6ca8ada733df555be3edc427f2e5f285ebf468aae940843de8cf74645
+Status: Downloaded newer image for nginx:latest
+ ---> cc1b61406712
+Step 2/4 : MAINTAINER OlegK57
+ ---> Running in 6fb0289a07fe
+ ---> 161131fdb6a4
+Removing intermediate container 6fb0289a07fe
+Step 3/4 : LABEL maintainer "OlegK57@gmail.com"
+ ---> Running in dc1d2712351a
+ ---> 3938efa9a7f0
+Removing intermediate container dc1d2712351a
+Step 4/4 : COPY static-html-directory /usr/share/nginx/html
+ ---> 60bd7002a21f
+Removing intermediate container c0b030bbd8b8
+Successfully built 60bd7002a21f
+[lolek] $ docker tag 60bd7002a21f olegk57/lolek:latest
+[lolek] $ docker inspect 60bd7002a21f
+[lolek] $ docker push olegk57/lolek:6-2017-02-13_105140
+The push refers to a repository [docker.io/olegk57/lolek]
+60d699f8c267: Preparing
+7d530616ebc2: Preparing
+db07381cb585: Preparing
+a2ae92ffcd29: Preparing
+a2ae92ffcd29: Layer already exists
+db07381cb585: Layer already exists
+7d530616ebc2: Layer already exists
+60d699f8c267: Pushed
+6-2017-02-13_105140: digest: sha256:0bfccbc12de27fafe88e09545024ed63b17c3e444c8ab32961224c73ac068de6 size: 1155
+[lolek] $ docker push olegk57/lolek:latest
+The push refers to a repository [docker.io/olegk57/lolek]
+60d699f8c267: Preparing
+7d530616ebc2: Preparing
+db07381cb585: Preparing
+a2ae92ffcd29: Preparing
+7d530616ebc2: Layer already exists
+60d699f8c267: Layer already exists
+a2ae92ffcd29: Layer already exists
+db07381cb585: Layer already exists
+latest: digest: sha256:0bfccbc12de27fafe88e09545024ed63b17c3e444c8ab32961224c73ac068de6 size: 1155
+executing script:
+
+touch /tmp/test
+[SSH] Exception:Algorithm negotiation fail
+com.jcraft.jsch.JSchException: Algorithm negotiation fail
+	at com.jcraft.jsch.Session.receive_kexinit(Session.java:520)
+	at com.jcraft.jsch.Session.connect(Session.java:286)
+	at com.jcraft.jsch.Session.connect(Session.java:150)
+	at org.jvnet.hudson.plugins.SSHSite.createSession(SSHSite.java:141)
+	at org.jvnet.hudson.plugins.SSHSite.executeCommand(SSHSite.java:151)
+	at org.jvnet.hudson.plugins.SSHBuilder.perform(SSHBuilder.java:60)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:779)
+	at hudson.model.Build$BuildExecution.build(Build.java:205)
+	at hudson.model.Build$BuildExecution.doRun(Build.java:162)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:534)
+	at hudson.model.Run.execute(Run.java:1728)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:98)
+	at hudson.model.Executor.run(Executor.java:404)
+Build step 'Execute shell script on remote host using ssh' marked build as failure
+Sending e-mails to: test@ogk.in.ua
+ERROR: 554 Please activate your Mailgun account. Check your inbox or log in to your control panel to resend the activation email.
+
+[8mha:////4KX8MINYh9p09OKsRm1RXAE5yTdYmZICfx2GnxFX1HVtAAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0mcom.sun.mail.smtp.SMTPSendFailedException: 554 Please activate your Mailgun account. Check your inbox or log in to your control panel to resend the activation email.
+
+	at com.sun.mail.smtp.SMTPTransport.issueSendCommand(SMTPTransport.java:2057)
+	at com.sun.mail.smtp.SMTPTransport.finishData(SMTPTransport.java:1862)
+	at com.sun.mail.smtp.SMTPTransport.sendMessage(SMTPTransport.java:1100)
+	at javax.mail.Transport.send0(Transport.java:195)
+	at javax.mail.Transport.send(Transport.java:124)
+	at hudson.tasks.MailSender.run(MailSender.java:129)
+	at hudson.tasks.Mailer.perform(Mailer.java:170)
+	at hudson.tasks.BuildStepCompatibilityLayer.perform(BuildStepCompatibilityLayer.java:78)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:779)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.performAllBuildSteps(AbstractBuild.java:720)
+	at hudson.model.Build$BuildExecution.post2(Build.java:185)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.post(AbstractBuild.java:665)
+	at hudson.model.Run.execute(Run.java:1753)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:98)
+	at hudson.model.Executor.run(Executor.java:404)
+Finished: FAILURE

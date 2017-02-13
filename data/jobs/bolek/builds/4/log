@@ -1,0 +1,79 @@
+Started by user [8mha:////4LZhWKkG598r9SJGD40R/skvjjRbj2Blghzoz8aN6IcvAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+[EnvInject] - Loading node environment variables.
+Building in workspace /var/jenkins_home/workspace/bolek
+[WS-CLEANUP] Deleting project workspace...
+Cloning the remote Git repository
+Cloning repository https://github.com/OlegK57/bolek.git
+ > git init /var/jenkins_home/workspace/bolek # timeout=10
+Fetching upstream changes from https://github.com/OlegK57/bolek.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/OlegK57/bolek.git +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url https://github.com/OlegK57/bolek.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/OlegK57/bolek.git # timeout=10
+Fetching upstream changes from https://github.com/OlegK57/bolek.git
+ > git fetch --tags --progress https://github.com/OlegK57/bolek.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision d99ede5654eac999116c653c9132aec533259c34 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f d99ede5654eac999116c653c9132aec533259c34
+ > git rev-list d99ede5654eac999116c653c9132aec533259c34 # timeout=10
+[bolek] $ /bin/sh -xe /tmp/hudson7886546066206421524.sh
++ date +%Y-%m-%d_%H%M%S
++ STAMP_TD=2017-02-13_115316
++ FULL_STAMP=4-2017-02-13_115316
++ echo FULL_STAMP=4-2017-02-13_115316
++ echo 4-2017-02-13_115316
+[EnvInject] - Injecting environment variables from a build step.
+[EnvInject] - Injecting as environment variables the properties file path 'env.properties'
+[EnvInject] - Variables injected successfully.
+[bolek] $ docker build -t olegk57/bolek:4-2017-02-13_115316 --pull=true /var/jenkins_home/workspace/bolek
+Sending build context to Docker daemon 61.95 kB
+Step 1/4 : FROM nginx
+latest: Pulling from library/nginx
+Digest: sha256:f2d384a6ca8ada733df555be3edc427f2e5f285ebf468aae940843de8cf74645
+Status: Image is up to date for nginx:latest
+ ---> cc1b61406712
+Step 2/4 : MAINTAINER OlegK57
+ ---> Using cache
+ ---> 161131fdb6a4
+Step 3/4 : LABEL maintainer "OlegK57@gmail.com"
+ ---> Using cache
+ ---> 3938efa9a7f0
+Step 4/4 : COPY static-html-directory /usr/share/nginx/html
+ ---> 189f17585691
+Removing intermediate container 1b4cc645507c
+Successfully built 189f17585691
+[bolek] $ docker tag 189f17585691 olegk57/bolek:latest
+[bolek] $ docker inspect 189f17585691
+[bolek] $ docker push olegk57/bolek:4-2017-02-13_115316
+The push refers to a repository [docker.io/olegk57/bolek]
+1fb319333bfa: Preparing
+7d530616ebc2: Preparing
+db07381cb585: Preparing
+a2ae92ffcd29: Preparing
+db07381cb585: Mounted from olegk57/lolek
+7d530616ebc2: Mounted from olegk57/lolek
+a2ae92ffcd29: Mounted from olegk57/lolek
+1fb319333bfa: Pushed
+4-2017-02-13_115316: digest: sha256:7ba3dfca0f6b17d737932446809cef8635d242309c2afb4ca5a2eaa8163d5833 size: 1155
+[bolek] $ docker push olegk57/bolek:latest
+The push refers to a repository [docker.io/olegk57/bolek]
+1fb319333bfa: Preparing
+7d530616ebc2: Preparing
+db07381cb585: Preparing
+a2ae92ffcd29: Preparing
+a2ae92ffcd29: Layer already exists
+7d530616ebc2: Layer already exists
+1fb319333bfa: Layer already exists
+db07381cb585: Layer already exists
+latest: digest: sha256:7ba3dfca0f6b17d737932446809cef8635d242309c2afb4ca5a2eaa8163d5833 size: 1155
+[bolek] $ /bin/sh -xe /tmp/hudson3681452368145493609.sh
++ ssh -l ok 172.17.0.1 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i /var/jenkins_home/key bash -s
+Warning: Permanently added '172.17.0.1' (ECDSA) to the list of known hosts.
+Using default tag: latest
+latest: Pulling from olegk57/bolek
+Digest: sha256:7ba3dfca0f6b17d737932446809cef8635d242309c2afb4ca5a2eaa8163d5833
+Status: Image is up to date for olegk57/bolek:latest
+Finished: SUCCESS

@@ -1,8 +1,4 @@
-Started on Feb 13, 2017 1:11:00 AM
-Using strategy: Default
-[poll] Last Built Revision: Revision d99ede5654eac999116c653c9132aec533259c34 (refs/remotes/origin/master)
- > git ls-remote -h https://github.com/OlegK57/bolek.git # timeout=10
-Found 1 remote heads on https://github.com/OlegK57/bolek.git
-[poll] Latest remote head revision on refs/heads/master is: d99ede5654eac999116c653c9132aec533259c34 - already built by 3
-Done. Took 0.8 sec
+Started on Feb 13, 2017 12:21:00 PM
+Build disabled
+Done. Took 0 ms
 No changes
