@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fingerprint>
+  <timestamp>2017-02-12 21:49:57.864 UTC</timestamp>
+  <original>
+    <name>lolek</name>
+    <number>4</number>
+  </original>
+  <md5sum>e2691ee4c73aedbc645b89e454f965e7</md5sum>
+  <fileName>Docker image sha256:e2691ee4c73aedbc645b89e454f965e736c534e20f4c85deab83b08a2aeace47</fileName>
+  <usages/>
+  <facets>
+    <org.jenkinsci.plugins.docker.commons.fingerprint.DockerAncestorFingerprintFacet plugin="docker-commons@1.6">
+      <timestamp>1486936197841</timestamp>
+      <imageId>sha256:e2691ee4c73aedbc645b89e454f965e736c534e20f4c85deab83b08a2aeace47</imageId>
+      <usages>
+        <entry>
+          <string>lolek</string>
+          <ranges>4</ranges>
+        </entry>
+      </usages>
+      <ancestorImageIds class="sorted-set">
+        <string>sha256:645fd92e0a0818c3b88b1aeb5c3586b24b0a4eb5e340d221c9dec8b47fcc2d4f</string>
+      </ancestorImageIds>
+    </org.jenkinsci.plugins.docker.commons.fingerprint.DockerAncestorFingerprintFacet>
+  </facets>
+</fingerprint>

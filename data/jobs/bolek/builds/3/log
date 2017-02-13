@@ -1,0 +1,95 @@
+Started by an SCM change
+[EnvInject] - Loading node environment variables.
+Building in workspace /var/jenkins_home/workspace/bolek
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Done
+Cloning the remote Git repository
+Cloning repository https://github.com/OlegK57/bolek.git
+ > git init /var/jenkins_home/workspace/bolek # timeout=10
+Fetching upstream changes from https://github.com/OlegK57/bolek.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/OlegK57/bolek.git +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url https://github.com/OlegK57/bolek.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/OlegK57/bolek.git # timeout=10
+Fetching upstream changes from https://github.com/OlegK57/bolek.git
+ > git fetch --tags --progress https://github.com/OlegK57/bolek.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision d99ede5654eac999116c653c9132aec533259c34 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f d99ede5654eac999116c653c9132aec533259c34
+ > git rev-list 27c895ee60be8557b8fb3ec969960a57ce14d69f # timeout=10
+[bolek] $ /bin/sh -xe /tmp/hudson2309213218601959723.sh
++ date +%Y-%m-%d_%H%M%S
++ STAMP_TD=2017-02-12_233109
++ FULL_STAMP=3-2017-02-12_233109
++ echo FULL_STAMP=3-2017-02-12_233109
++ echo 3-2017-02-12_233109
+[EnvInject] - Injecting environment variables from a build step.
+[EnvInject] - Injecting as environment variables the properties file path 'env.properties'
+[EnvInject] - Variables injected successfully.
+[bolek] $ docker build -t olegk57/bolek:3-2017-02-12_233109 --pull=true /var/jenkins_home/workspace/bolek
+Sending build context to Docker daemon 61.95 kB
+Step 1/4 : FROM nginx
+latest: Pulling from library/nginx
+Digest: sha256:f2d384a6ca8ada733df555be3edc427f2e5f285ebf468aae940843de8cf74645
+Status: Image is up to date for nginx:latest
+ ---> cc1b61406712
+Step 2/4 : MAINTAINER OlegK57
+ ---> Using cache
+ ---> 2352f1e88ad7
+Step 3/4 : LABEL maintainer "OlegK57@gmail.com"
+ ---> Using cache
+ ---> 645fd92e0a08
+Step 4/4 : COPY static-html-directory /usr/share/nginx/html
+ ---> 9e8fcdc7caf8
+Removing intermediate container 31a9a6ef2afb
+Successfully built 9e8fcdc7caf8
+[bolek] $ docker tag 9e8fcdc7caf8 olegk57/bolek:latest
+[bolek] $ docker inspect 9e8fcdc7caf8
+[bolek] $ docker push olegk57/bolek:3-2017-02-12_233109
+The push refers to a repository [docker.io/olegk57/bolek]
+a09ab4b8b253: Preparing
+7d530616ebc2: Preparing
+db07381cb585: Preparing
+a2ae92ffcd29: Preparing
+db07381cb585: Layer already exists
+7d530616ebc2: Layer already exists
+a2ae92ffcd29: Layer already exists
+a09ab4b8b253: Pushed
+3-2017-02-12_233109: digest: sha256:511e609c9a68a57448b7eea5c416ddf3705450830e3a8757cdd38f86771957ce size: 1155
+[bolek] $ docker push olegk57/bolek:latest
+The push refers to a repository [docker.io/olegk57/bolek]
+a09ab4b8b253: Preparing
+7d530616ebc2: Preparing
+db07381cb585: Preparing
+a2ae92ffcd29: Preparing
+a2ae92ffcd29: Layer already exists
+a09ab4b8b253: Layer already exists
+db07381cb585: Layer already exists
+7d530616ebc2: Layer already exists
+latest: digest: sha256:511e609c9a68a57448b7eea5c416ddf3705450830e3a8757cdd38f86771957ce size: 1155
+Sending e-mails to: test@ogk.in.ua
+ERROR: 554 Please activate your Mailgun account. Check your inbox or log in to your control panel to resend the activation email.
+
+[8mha:////4KX8MINYh9p09OKsRm1RXAE5yTdYmZICfx2GnxFX1HVtAAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0mcom.sun.mail.smtp.SMTPSendFailedException: 554 Please activate your Mailgun account. Check your inbox or log in to your control panel to resend the activation email.
+
+	at com.sun.mail.smtp.SMTPTransport.issueSendCommand(SMTPTransport.java:2057)
+	at com.sun.mail.smtp.SMTPTransport.finishData(SMTPTransport.java:1862)
+	at com.sun.mail.smtp.SMTPTransport.sendMessage(SMTPTransport.java:1100)
+	at javax.mail.Transport.send0(Transport.java:195)
+	at javax.mail.Transport.send(Transport.java:124)
+	at hudson.tasks.MailSender.run(MailSender.java:129)
+	at hudson.tasks.Mailer.perform(Mailer.java:170)
+	at hudson.tasks.BuildStepCompatibilityLayer.perform(BuildStepCompatibilityLayer.java:78)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:779)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.performAllBuildSteps(AbstractBuild.java:720)
+	at hudson.model.Build$BuildExecution.post2(Build.java:185)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.post(AbstractBuild.java:665)
+	at hudson.model.Run.execute(Run.java:1753)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:98)
+	at hudson.model.Executor.run(Executor.java:404)
+Finished: SUCCESS

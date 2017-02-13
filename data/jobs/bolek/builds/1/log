@@ -1,0 +1,72 @@
+Started by an SCM change
+[EnvInject] - Loading node environment variables.
+Building in workspace /var/jenkins_home/workspace/bolek
+[WS-CLEANUP] Deleting project workspace...
+Cloning the remote Git repository
+Cloning repository https://github.com/OlegK57/bolek.git
+ > git init /var/jenkins_home/workspace/bolek # timeout=10
+Fetching upstream changes from https://github.com/OlegK57/bolek.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/OlegK57/bolek.git +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url https://github.com/OlegK57/bolek.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/OlegK57/bolek.git # timeout=10
+Fetching upstream changes from https://github.com/OlegK57/bolek.git
+ > git fetch --tags --progress https://github.com/OlegK57/bolek.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 07156c1644d87ced149bdd3f21494133ef45c76e (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 07156c1644d87ced149bdd3f21494133ef45c76e
+First time build. Skipping changelog.
+[bolek] $ /bin/sh -xe /tmp/hudson2878826802692423467.sh
++ date +%Y-%m-%d_%H%M%S
++ STAMP_TD=2017-02-12_222608
++ FULL_STAMP=1-2017-02-12_222608
++ echo FULL_STAMP=1-2017-02-12_222608
++ echo 1-2017-02-12_222608
+[EnvInject] - Injecting environment variables from a build step.
+[EnvInject] - Injecting as environment variables the properties file path 'env.properties'
+[EnvInject] - Variables injected successfully.
+[bolek] $ docker build -t olegk57/bolek:1-2017-02-12_222608 --pull=true /var/jenkins_home/workspace/bolek
+Sending build context to Docker daemon 57.34 kB
+Step 1/4 : FROM nginx
+latest: Pulling from library/nginx
+Digest: sha256:f2d384a6ca8ada733df555be3edc427f2e5f285ebf468aae940843de8cf74645
+Status: Image is up to date for nginx:latest
+ ---> cc1b61406712
+Step 2/4 : MAINTAINER OlegK57
+ ---> Using cache
+ ---> 2352f1e88ad7
+Step 3/4 : LABEL maintainer "OlegK57@gmail.com"
+ ---> Using cache
+ ---> 645fd92e0a08
+Step 4/4 : COPY static-html-directory /usr/share/nginx/html
+ ---> 06d0667c2b19
+Removing intermediate container d94925b31341
+Successfully built 06d0667c2b19
+[bolek] $ docker tag 06d0667c2b19 olegk57/bolek:latest
+[bolek] $ docker inspect 06d0667c2b19
+[bolek] $ docker push olegk57/bolek:1-2017-02-12_222608
+The push refers to a repository [docker.io/olegk57/bolek]
+7df162467c97: Preparing
+7d530616ebc2: Preparing
+db07381cb585: Preparing
+a2ae92ffcd29: Preparing
+db07381cb585: Layer already exists
+7d530616ebc2: Layer already exists
+a2ae92ffcd29: Layer already exists
+7df162467c97: Pushed
+1-2017-02-12_222608: digest: sha256:df539b08202bceddc62f0552f7eb49ee6cbedaf3838da83c8e850b1c69c82b71 size: 1155
+[bolek] $ docker push olegk57/bolek:latest
+The push refers to a repository [docker.io/olegk57/bolek]
+7df162467c97: Preparing
+7d530616ebc2: Preparing
+db07381cb585: Preparing
+a2ae92ffcd29: Preparing
+a2ae92ffcd29: Layer already exists
+7df162467c97: Layer already exists
+db07381cb585: Layer already exists
+7d530616ebc2: Layer already exists
+latest: digest: sha256:df539b08202bceddc62f0552f7eb49ee6cbedaf3838da83c8e850b1c69c82b71 size: 1155
+Finished: SUCCESS

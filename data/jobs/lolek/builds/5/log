@@ -1,4 +1,5 @@
-Started by user [8mha:////4B19DQygU7belKPsM8y5UZw+sfIRHaPb2s6MvIIHkQHlAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+Started by user [8mha:////4LZhWKkG598r9SJGD40R/skvjjRbj2Blghzoz8aN6IcvAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+[EnvInject] - Loading node environment variables.
 Building in workspace /var/jenkins_home/workspace/lolek
 [WS-CLEANUP] Deleting project workspace...
 [WS-CLEANUP] Done
@@ -19,25 +20,54 @@ Checking out Revision d62834818cbb460fe0f2af8bec8e18bfe51275c1 (refs/remotes/ori
  > git config core.sparsecheckout # timeout=10
  > git checkout -f d62834818cbb460fe0f2af8bec8e18bfe51275c1
  > git rev-list d62834818cbb460fe0f2af8bec8e18bfe51275c1 # timeout=10
-[lolek] $ /bin/sh -xe /tmp/hudson7082634906481824420.sh
-+ date +%Y%m%d%H%M%S
-+ STAMP_TD=20170210094703
-+ echo 5-20170210094703
-ERROR: Build step failed with exception
-[8mha:////4DAt7t2SmsinyR4zJrdYGhbkI0SyRTMmHJS5U6uRKQ35AAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0mjava.lang.NullPointerException: uri was not specified
-	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:204)
-	at com.github.dockerjava.core.DefaultDockerClientConfig$Builder.withDockerHost(DefaultDockerClientConfig.java:348)
-	at org.jenkinsci.plugins.dockerbuildstep.DockerBuilder$DescriptorImpl.createDockerClient(DockerBuilder.java:125)
-	at org.jenkinsci.plugins.dockerbuildstep.DockerBuilder$DescriptorImpl.getDockerClient(DockerBuilder.java:216)
-	at org.jenkinsci.plugins.dockerbuildstep.DockerBuilder.perform(DockerBuilder.java:67)
-	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
-	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:779)
-	at hudson.model.Build$BuildExecution.build(Build.java:205)
-	at hudson.model.Build$BuildExecution.doRun(Build.java:162)
-	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:534)
-	at hudson.model.Run.execute(Run.java:1728)
-	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
-	at hudson.model.ResourceController.execute(ResourceController.java:98)
-	at hudson.model.Executor.run(Executor.java:404)
-Build step 'Execute Docker command' marked build as failure
-Finished: FAILURE
+[lolek] $ /bin/sh -xe /tmp/hudson5799187196641676656.sh
++ date +%Y-%m-%d_%H%M%S
++ STAMP_TD=2017-02-12_215255
++ FULL_STAMP=5-2017-02-12_215255
++ echo FULL_STAMP=5-2017-02-12_215255
++ echo 5-2017-02-12_215255
+[EnvInject] - Injecting environment variables from a build step.
+[EnvInject] - Injecting as environment variables the properties file path 'env.properties'
+[EnvInject] - Variables injected successfully.
+[lolek] $ docker build -t olegk57/lolek:5-2017-02-12_215255 --pull=true /var/jenkins_home/workspace/lolek
+Sending build context to Docker daemon 57.86 kB
+Step 1/4 : FROM nginx
+latest: Pulling from library/nginx
+Digest: sha256:f2d384a6ca8ada733df555be3edc427f2e5f285ebf468aae940843de8cf74645
+Status: Image is up to date for nginx:latest
+ ---> cc1b61406712
+Step 2/4 : MAINTAINER OlegK57
+ ---> Using cache
+ ---> 2352f1e88ad7
+Step 3/4 : LABEL maintainer "OlegK57@gmail.com"
+ ---> Using cache
+ ---> 645fd92e0a08
+Step 4/4 : COPY static-html-directory /usr/share/nginx/html
+ ---> 86f2f8eded7c
+Removing intermediate container 10d60556007e
+Successfully built 86f2f8eded7c
+[lolek] $ docker tag 86f2f8eded7c olegk57/lolek:latest
+[lolek] $ docker inspect 86f2f8eded7c
+[lolek] $ docker push olegk57/lolek:5-2017-02-12_215255
+The push refers to a repository [docker.io/olegk57/lolek]
+8622ce763879: Preparing
+7d530616ebc2: Preparing
+db07381cb585: Preparing
+a2ae92ffcd29: Preparing
+7d530616ebc2: Layer already exists
+db07381cb585: Layer already exists
+a2ae92ffcd29: Layer already exists
+8622ce763879: Pushed
+5-2017-02-12_215255: digest: sha256:6e901bd617cef8f250853d1c756913b56ec1a0c3c9a458b48edd5a8202bcb3c3 size: 1155
+[lolek] $ docker push olegk57/lolek:latest
+The push refers to a repository [docker.io/olegk57/lolek]
+8622ce763879: Preparing
+7d530616ebc2: Preparing
+db07381cb585: Preparing
+a2ae92ffcd29: Preparing
+7d530616ebc2: Layer already exists
+8622ce763879: Layer already exists
+a2ae92ffcd29: Layer already exists
+db07381cb585: Layer already exists
+latest: digest: sha256:6e901bd617cef8f250853d1c756913b56ec1a0c3c9a458b48edd5a8202bcb3c3 size: 1155
+Finished: SUCCESS

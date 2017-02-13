@@ -3,14 +3,8 @@
   <fullName>admin</fullName>
   <properties>
     <jenkins.security.ApiTokenProperty>
-      <apiToken>{AQAAABAAAAAwRiMs4KfK3fLR4dnbeoVGPMVFy8Ul9j864aNYspfxotCdgDaxIUHKXnwa+2md9SYZV3EdLBqS+pmbb4tf2S8vhw==}</apiToken>
+      <apiToken>{AQAAABAAAAAwXf4J1FX44+Zia08uPZuuTIgKnG724gJi/At0vxwhkXhW9D+QfOQNBGJ0B3a2p5TVyM4PHtpFaajbyNcNqiwaOg==}</apiToken>
     </jenkins.security.ApiTokenProperty>
-    <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@2.1.11">
-      <domainCredentialsMap class="hudson.util.CopyOnWriteMap$Hash"/>
-    </com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty>
-    <hudson.plugins.emailext.watching.EmailExtWatchAction_-UserProperty plugin="email-ext@2.54">
-      <triggers/>
-    </hudson.plugins.emailext.watching.EmailExtWatchAction_-UserProperty>
     <hudson.model.MyViewsProperty>
       <views>
         <hudson.model.AllView>
@@ -22,9 +16,6 @@
         </hudson.model.AllView>
       </views>
     </hudson.model.MyViewsProperty>
-    <org.jenkinsci.plugins.displayurlapi.user.PreferredProviderUserProperty plugin="display-url-api@1.1.1">
-      <providerId>default</providerId>
-    </org.jenkinsci.plugins.displayurlapi.user.PreferredProviderUserProperty>
     <hudson.model.PaneStatusProperties>
       <collapsed/>
     </hudson.model.PaneStatusProperties>
@@ -32,16 +23,13 @@
       <insensitiveSearch>false</insensitiveSearch>
     </hudson.search.UserSearchProperty>
     <hudson.security.HudsonPrivateSecurityRealm_-Details>
-      <passwordHash>#jbcrypt:$2a$10$e3zOdIH2dR5MbmKRZMNYrOT6WXx1ppRY6LyduBC.swhfow5DqyljK</passwordHash>
+      <passwordHash>#jbcrypt:$2a$10$x1L8oszSMOXDM3EDI1iaM.iQpTupFuk1yh/ykhtVeotwChGCn1fmS</passwordHash>
     </hudson.security.HudsonPrivateSecurityRealm_-Details>
-    <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.19">
-      <emailAddress>admin@ogk.in.ua</emailAddress>
-    </hudson.tasks.Mailer_-UserProperty>
     <jenkins.security.LastGrantedAuthoritiesProperty>
       <roles>
         <string>authenticated</string>
       </roles>
-      <timestamp>1486702131475</timestamp>
+      <timestamp>1486934725288</timestamp>
     </jenkins.security.LastGrantedAuthoritiesProperty>
   </properties>
 </user>

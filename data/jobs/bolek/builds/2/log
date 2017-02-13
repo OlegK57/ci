@@ -1,0 +1,66 @@
+Started by an SCM change
+[EnvInject] - Loading node environment variables.
+Building in workspace /var/jenkins_home/workspace/bolek
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Done
+Cloning the remote Git repository
+Cloning repository https://github.com/OlegK57/bolek.git
+ > git init /var/jenkins_home/workspace/bolek # timeout=10
+Fetching upstream changes from https://github.com/OlegK57/bolek.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/OlegK57/bolek.git +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url https://github.com/OlegK57/bolek.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/OlegK57/bolek.git # timeout=10
+Fetching upstream changes from https://github.com/OlegK57/bolek.git
+ > git fetch --tags --progress https://github.com/OlegK57/bolek.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 27c895ee60be8557b8fb3ec969960a57ce14d69f (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 27c895ee60be8557b8fb3ec969960a57ce14d69f
+ > git rev-list 07156c1644d87ced149bdd3f21494133ef45c76e # timeout=10
+[bolek] $ /bin/sh -xe /tmp/hudson4669168514367103143.sh
++ date +%Y-%m-%d_%H%M%S
++ STAMP_TD=2017-02-12_225109
++ FULL_STAMP=2-2017-02-12_225109
++ echo FULL_STAMP=2-2017-02-12_225109
+/tmp/hudson4669168514367103143.sh: 6: /tmp/hudson4669168514367103143.sh: cannot create static-html-directory/version.html: Directory nonexistent
++ echo 2-2017-02-12_225109
+Build step 'Execute shell' marked build as failure
+Sending e-mails to: test@ogk.in.ua
+ERROR: Could not connect to SMTP host: localhost, port: 25
+[8mha:////4KX8MINYh9p09OKsRm1RXAE5yTdYmZICfx2GnxFX1HVtAAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0mjavax.mail.MessagingException: Could not connect to SMTP host: localhost, port: 25;
+  nested exception is:
+	java.net.ConnectException: Connection refused (Connection refused)
+	at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:1934)
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:638)
+	at javax.mail.Service.connect(Service.java:295)
+	at javax.mail.Service.connect(Service.java:176)
+	at javax.mail.Service.connect(Service.java:125)
+	at javax.mail.Transport.send0(Transport.java:194)
+	at javax.mail.Transport.send(Transport.java:124)
+	at hudson.tasks.MailSender.run(MailSender.java:129)
+	at hudson.tasks.Mailer.perform(Mailer.java:170)
+	at hudson.tasks.BuildStepCompatibilityLayer.perform(BuildStepCompatibilityLayer.java:78)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:779)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.performAllBuildSteps(AbstractBuild.java:720)
+	at hudson.model.Build$BuildExecution.post2(Build.java:185)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.post(AbstractBuild.java:665)
+	at hudson.model.Run.execute(Run.java:1753)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:98)
+	at hudson.model.Executor.run(Executor.java:404)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.sun.mail.util.SocketFetcher.createSocket(SocketFetcher.java:286)
+	at com.sun.mail.util.SocketFetcher.getSocket(SocketFetcher.java:231)
+	at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:1900)
+	... 18 more
+Finished: FAILURE

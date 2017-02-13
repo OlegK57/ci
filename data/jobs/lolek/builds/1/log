@@ -1,4 +1,5 @@
-Started by user [8mha:////4B19DQygU7belKPsM8y5UZw+sfIRHaPb2s6MvIIHkQHlAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+Started by user [8mha:////4LZhWKkG598r9SJGD40R/skvjjRbj2Blghzoz8aN6IcvAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+[EnvInject] - Loading node environment variables.
 Building in workspace /var/jenkins_home/workspace/lolek
 Cloning the remote Git repository
 Cloning repository https://github.com/OlegK57/lolek.git
@@ -17,21 +18,8 @@ Checking out Revision d62834818cbb460fe0f2af8bec8e18bfe51275c1 (refs/remotes/ori
  > git config core.sparsecheckout # timeout=10
  > git checkout -f d62834818cbb460fe0f2af8bec8e18bfe51275c1
 First time build. Skipping changelog.
-ERROR: Build step failed with exception
-[8mha:////4DAt7t2SmsinyR4zJrdYGhbkI0SyRTMmHJS5U6uRKQ35AAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0mjava.lang.NullPointerException: uri was not specified
-	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:204)
-	at com.github.dockerjava.core.DefaultDockerClientConfig$Builder.withDockerHost(DefaultDockerClientConfig.java:348)
-	at org.jenkinsci.plugins.dockerbuildstep.DockerBuilder$DescriptorImpl.createDockerClient(DockerBuilder.java:125)
-	at org.jenkinsci.plugins.dockerbuildstep.DockerBuilder$DescriptorImpl.getDockerClient(DockerBuilder.java:216)
-	at org.jenkinsci.plugins.dockerbuildstep.DockerBuilder.perform(DockerBuilder.java:67)
-	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
-	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:779)
-	at hudson.model.Build$BuildExecution.build(Build.java:205)
-	at hudson.model.Build$BuildExecution.doRun(Build.java:162)
-	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:534)
-	at hudson.model.Run.execute(Run.java:1728)
-	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
-	at hudson.model.ResourceController.execute(ResourceController.java:98)
-	at hudson.model.Executor.run(Executor.java:404)
-Build step 'Execute Docker command' marked build as failure
+[EnvInject] - Executing scripts and injecting environment variables after the SCM step.
+[EnvInject] - [ERROR] - The given properties file path 'env.properties' doesn't exist.
+[EnvInject] - [ERROR] - Missing file path was resolved from pattern 'env.properties' .
+[EnvInject] - [ERROR] - Problems occurs on injecting env vars defined in the build wrapper: org.jenkinsci.lib.envinject.EnvInjectException: java.io.IOException: The given properties file path 'env.properties' doesn't exist.. See system log for more info
 Finished: FAILURE

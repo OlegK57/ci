@@ -9,7 +9,10 @@
         </entry>
       </causeBag>
     </hudson.model.CauseAction>
-    <hudson.plugins.git.util.BuildData plugin="git@3.0.4">
+    <org.jenkinsci.plugins.envinject.EnvInjectPluginAction plugin="envinject@1.93.1">
+      <build class="build" reference="../../.."/>
+    </org.jenkinsci.plugins.envinject.EnvInjectPluginAction>
+    <hudson.plugins.git.util.BuildData plugin="git@3.0.5">
       <buildsByBranchName>
         <entry>
           <string>refs/remotes/origin/master</string>
@@ -33,7 +36,7 @@
         <string>https://github.com/OlegK57/lolek.git</string>
       </remoteUrls>
     </hudson.plugins.git.util.BuildData>
-    <hudson.plugins.git.GitTagAction plugin="git@3.0.4">
+    <hudson.plugins.git.GitTagAction plugin="git@3.0.5">
       <tags class="hudson.util.CopyOnWriteMap$Tree">
         <entry>
           <string>refs/remotes/origin/master</string>
@@ -43,18 +46,26 @@
       <ws>/var/jenkins_home/workspace/lolek</ws>
     </hudson.plugins.git.GitTagAction>
     <hudson.scm.SCMRevisionState_-None/>
+    <org.jenkinsci.plugins.envinject.EnvInjectBuilderContributionAction plugin="envinject@1.93.1"/>
+    <org.jenkinsci.plugins.docker.commons.fingerprint.DockerFingerprintAction plugin="docker-commons@1.6">
+      <imageIDs>
+        <string>sha256:86f2f8eded7c7e6572c679fdfbea24267bef60c132392d6071c97c47bb006184</string>
+        <string>sha256:645fd92e0a0818c3b88b1aeb5c3586b24b0a4eb5e340d221c9dec8b47fcc2d4f</string>
+      </imageIDs>
+    </org.jenkinsci.plugins.docker.commons.fingerprint.DockerFingerprintAction>
   </actions>
   <queueId>5</queueId>
-  <timestamp>1486720021412</timestamp>
-  <startTime>1486720021414</startTime>
-  <result>FAILURE</result>
-  <duration>1977</duration>
+  <timestamp>1486936373229</timestamp>
+  <startTime>1486936373230</startTime>
+  <result>SUCCESS</result>
+  <displayName>#5 olegk57/lolek:5-2017-02-12_215255 olegk57/lolek:latest</displayName>
+  <duration>16603</duration>
   <charset>UTF-8</charset>
   <keepLog>false</keepLog>
   <builtOn></builtOn>
   <workspace>/var/jenkins_home/workspace/lolek</workspace>
   <hudsonVersion>2.32.2</hudsonVersion>
-  <scm class="hudson.plugins.git.GitChangeLogParser" plugin="git@3.0.4">
+  <scm class="hudson.plugins.git.GitChangeLogParser" plugin="git@3.0.5">
     <authorOrCommitter>false</authorOrCommitter>
   </scm>
   <culprits class="com.google.common.collect.EmptyImmutableSortedSet"/>

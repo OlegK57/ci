@@ -1,33 +1,26 @@
-Started by user [8mha:////4B19DQygU7belKPsM8y5UZw+sfIRHaPb2s6MvIIHkQHlAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
-Building in workspace /var/jenkins_home/workspace/lolek
- > git rev-parse --is-inside-work-tree # timeout=10
-Fetching changes from the remote Git repository
- > git config remote.origin.url https://github.com/OlegK57/lolek.git # timeout=10
-Fetching upstream changes from https://github.com/OlegK57/lolek.git
- > git --version # timeout=10
- > git fetch --tags --progress https://github.com/OlegK57/lolek.git +refs/heads/*:refs/remotes/origin/*
- > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
- > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
-Checking out Revision d62834818cbb460fe0f2af8bec8e18bfe51275c1 (refs/remotes/origin/master)
- > git config core.sparsecheckout # timeout=10
- > git checkout -f d62834818cbb460fe0f2af8bec8e18bfe51275c1
- > git rev-list d62834818cbb460fe0f2af8bec8e18bfe51275c1 # timeout=10
-ERROR: Build step failed with exception
-[8mha:////4DAt7t2SmsinyR4zJrdYGhbkI0SyRTMmHJS5U6uRKQ35AAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0mjava.lang.NullPointerException: uri was not specified
-	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:204)
-	at com.github.dockerjava.core.DefaultDockerClientConfig$Builder.withDockerHost(DefaultDockerClientConfig.java:348)
-	at org.jenkinsci.plugins.dockerbuildstep.DockerBuilder$DescriptorImpl.createDockerClient(DockerBuilder.java:125)
-	at org.jenkinsci.plugins.dockerbuildstep.DockerBuilder$DescriptorImpl.getDockerClient(DockerBuilder.java:216)
-	at org.jenkinsci.plugins.dockerbuildstep.DockerBuilder.perform(DockerBuilder.java:67)
-	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
-	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:779)
-	at hudson.model.Build$BuildExecution.build(Build.java:205)
-	at hudson.model.Build$BuildExecution.doRun(Build.java:162)
-	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:534)
+Started by user [8mha:////4LZhWKkG598r9SJGD40R/skvjjRbj2Blghzoz8aN6IcvAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+[EnvInject] - Loading node environment variables.
+[EnvInject] - Preparing an environment for the build.
+[EnvInject] - Keeping Jenkins system variables.
+[EnvInject] - Keeping Jenkins build variables.
+[EnvInject] - [ERROR] - The given properties file path 'env.properties' doesn't exist.
+[EnvInject] - [ERROR] - Missing file path was resolved from pattern 'env.properties' .
+ERROR: SEVERE ERROR occurs
+[8mha:////4KX8MINYh9p09OKsRm1RXAE5yTdYmZICfx2GnxFX1HVtAAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0morg.jenkinsci.lib.envinject.EnvInjectException: java.io.IOException: The given properties file path 'env.properties' doesn't exist.
+	at org.jenkinsci.plugins.envinject.service.EnvInjectEnvVars.getEnvVarsPropertiesJobProperty(EnvInjectEnvVars.java:59)
+	at org.jenkinsci.plugins.envinject.EnvInjectListener.setUpEnvironmentJobPropertyObject(EnvInjectListener.java:193)
+	at org.jenkinsci.plugins.envinject.EnvInjectListener.setUpEnvironment(EnvInjectListener.java:47)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.createLauncher(AbstractBuild.java:572)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:492)
 	at hudson.model.Run.execute(Run.java:1728)
 	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
 	at hudson.model.ResourceController.execute(ResourceController.java:98)
 	at hudson.model.Executor.run(Executor.java:404)
-Build step 'Execute Docker command' marked build as failure
-[WS-CLEANUP] Deleting project workspace...[WS-CLEANUP] done
+Caused by: java.io.IOException: The given properties file path 'env.properties' doesn't exist.
+	at org.jenkinsci.plugins.envinject.service.PropertiesVariablesRetriever.invoke(PropertiesVariablesRetriever.java:91)
+	at org.jenkinsci.plugins.envinject.service.PropertiesVariablesRetriever.invoke(PropertiesVariablesRetriever.java:20)
+	at hudson.FilePath.act(FilePath.java:996)
+	at hudson.FilePath.act(FilePath.java:974)
+	at org.jenkinsci.plugins.envinject.service.EnvInjectEnvVars.getEnvVarsPropertiesJobProperty(EnvInjectEnvVars.java:54)
+	... 8 more
 Finished: FAILURE

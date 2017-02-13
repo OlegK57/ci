@@ -1,0 +1,11 @@
+commit d99ede5654eac999116c653c9132aec533259c34
+tree e935aecb65f937acb15bb98f8b57e37ab3e0c0aa
+parent 27c895ee60be8557b8fb3ec969960a57ce14d69f
+author Oleg Kasyanov <devel@ogk.in.ua> 2017-02-13 01:27:08 +0200
+committer Oleg Kasyanov <devel@ogk.in.ua> 2017-02-13 01:27:08 +0200
+
+    Error test restore
+
+
+
+:100644 100644 fb7756f61a1f28b3a55dd5609e3423db400f007f fb7756f61a1f28b3a55dd5609e3423db400f007f R100	static-html-director/index.html	static-html-directory/index.html
