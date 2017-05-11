@@ -21,7 +21,7 @@
     <extensions/>
   </scm>
   <canRoam>true</canRoam>
-  <disabled>true</disabled>
+  <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers>
@@ -66,21 +66,19 @@ echo $FULL_STAMP &gt; static-html-directory/version.html
       <forceTag>false</forceTag>
     </com.cloudbees.dockerpublish.DockerBuilder>
     <hudson.tasks.Shell>
-      <command>ssh -l ok 172.17.0.1 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i /var/jenkins_home/key &apos;bash -s&apos; &lt;&lt;&apos;ENDSSH&apos;
-  ID_LIST=&apos;&apos;
-  IMAGE=&apos;olegk57/lolek&apos;
+      <command>ID_LIST=&apos;&apos;
+IMAGE=&apos;olegk57/lolek&apos;
 
-  docker pull $IMAGE
+docker pull $IMAGE
 
-  for id in `docker container ls | grep -v -i &quot;CONTAINER ID&quot;| cut -d&quot; &quot; -f1 | tr &apos;\n&apos; &apos; &apos;`
-  do
-    if docker container inspect $id | grep -izq &quot;$IMAGE&quot;
-    then
-      docker container kill $id
-      docker run -d $IMAGE
-    fi
-  done
-ENDSSH
+for id in `docker ps | grep -v -i &quot;CONTAINER ID&quot;| cut -d&quot; &quot; -f1 | tr &apos;\n&apos; &apos; &apos;`
+do
+  if docker inspect $id | grep -izq &quot;$IMAGE&quot;
+  then
+    docker rm -f $id
+    docker run -d -P $IMAGE
+  fi
+done
 </command>
     </hudson.tasks.Shell>
   </builders>
